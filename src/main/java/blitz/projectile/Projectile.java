@@ -32,4 +32,10 @@ public class Projectile {
     public double getApexTime() {
         return (velocity * Math.sin(radians)) / 9.8;
     }
+
+    public double getPeakY() {
+        return (velocity * velocity * Math.sin(radians) * Math.sin(radians) / (2 * 9.8));
+        //https://physics.bu.edu
+    }
+
 }
