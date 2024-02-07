@@ -48,4 +48,5 @@ class ProjectileTest {
         // then
         assertEquals(1.05, actual, 0.01);
     }
+
 }

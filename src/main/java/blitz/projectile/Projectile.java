@@ -30,7 +30,6 @@ public class Projectile {
      */
 
     public double getApexTime() {
-        double highestPoint = velocity * Math.sin(radians);
-        return highestPoint / 9.8;
+        return (velocity * Math.sin(radians)) / 9.8;
     }
 }
