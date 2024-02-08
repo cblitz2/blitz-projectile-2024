@@ -21,8 +21,8 @@ public class Projectile {
     }
 
     public double getY() {
-        return Math.sin(radians)* velocity * time -
-                (.5 * 9.8 * time * time);
+        return Math.sin(radians) * velocity * time
+                - (.5 * 9.8 * time * time);
     }
 
     /**
