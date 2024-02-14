@@ -5,6 +5,7 @@ public class Projectile {
     private final double radians;
     private final double velocity;
     private double time;
+    private static final double GRAVITY = 9.8;
 
     public Projectile(double angle, double velocity) {
         this.angle = angle;
@@ -22,7 +23,7 @@ public class Projectile {
 
     public double getY() {
         return Math.sin(radians) * velocity * time
-                - (.5 * 9.8 * time * time);
+                - (.5 * GRAVITY * time * time);
     }
 
     /**
@@ -30,12 +31,16 @@ public class Projectile {
      */
 
     public double getApexTime() {
-        return (velocity * Math.sin(radians)) / 9.8;
+        return (velocity * Math.sin(radians)) / GRAVITY;
     }
 
     public double getPeakY() {
-        return (velocity * velocity * Math.sin(radians) * Math.sin(radians) / (2 * 9.8));
+        return (velocity * velocity * Math.sin(radians) * Math.sin(radians) / (2 * GRAVITY));
         //https://physics.bu.edu
+    }
+
+    public double getInterceptX() {
+        return (2 * velocity * velocity * Math.sin(radians) * Math.cos(radians)) / GRAVITY;
     }
 
 }
