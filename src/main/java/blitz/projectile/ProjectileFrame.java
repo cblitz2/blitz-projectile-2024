@@ -93,9 +93,10 @@ public class ProjectileFrame extends JFrame
     }
 
     private void calculate() {
-        Projectile projectile = new Projectile(Double.parseDouble(velocityField.getText()),
-                angleField.getValue()
+        Projectile projectile = new Projectile(angleField.getValue(),
+                Double.parseDouble(velocityField.getText())
         );
+
         projectile.setTime(Double.parseDouble(secondsField.getText()));
         labX.setText(Double.toString(projectile.getX()));
         labY.setText(Double.toString(projectile.getY()));
