@@ -22,6 +22,7 @@ public class ProjectileFrame extends JFrame
         setSize(400, 600);
         setTitle("Projectile Calculator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
         setLayout(new GridLayout(8, 2));
 
         angleField = new JSlider(0,90);
