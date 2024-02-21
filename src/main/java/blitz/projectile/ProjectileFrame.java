@@ -77,9 +77,7 @@ public class ProjectileFrame extends JFrame
             @Override
             public void update(DocumentEvent e)
             {
-                {
-                    calculate();
-                }
+                calculate();
             }
         });
 
