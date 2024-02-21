@@ -75,8 +75,7 @@ public class ProjectileFrame extends JFrame
         velocityField.getDocument().addDocumentListener(new SimpleDocumentListener()
         {
             @Override
-            public void update(DocumentEvent e)
-            {
+            public void update(DocumentEvent e) {
                 calculate();
             }
         });
