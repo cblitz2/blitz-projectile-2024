@@ -25,7 +25,7 @@ public class ProjectileFrame extends JFrame
 
         setLayout(new GridLayout(8, 2));
 
-        angleField = new JSlider(0,90);
+        angleField = new JSlider(0, 90);
         add(angleField);
         JLabel angleLabel = new JLabel("Angle");
         add(angleLabel);
