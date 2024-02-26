@@ -14,7 +14,7 @@ public class ProjectileGraph extends JComponent {
         int currX;
         int currY;
 
-        for (int i = 0; i < projectile.getApexTime()*2; i++) {
+        for (int i = 0; i < projectile.getApexTime() * 2; i++) {
             currX = (int) projectile.getX();
             currY = (int) projectile.getY();
             projectile.setTime(i);
@@ -22,7 +22,7 @@ public class ProjectileGraph extends JComponent {
         }
 
         g.setColor(Color.BLUE);
-        g.fillOval((int) projectile.getX()/2, -(int) projectile.getPeakY(), 10, 10);
+        g.fillOval((int) projectile.getX() / 2, -(int) projectile.getPeakY(), 10, 10);
     }
 
     public void setProjectile(Projectile projectile) {
