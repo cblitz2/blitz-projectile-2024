@@ -14,7 +14,7 @@ public class ProjectileGraph extends JComponent {
         int currX;
         int currY;
 
-        for (int i = 0; i < projectile.getApexTime() * 2; i++) {
+        for (int i = 0; i < projectile.getApexTime() * 2 + 1; i++) {
             currX = (int) projectile.getX();
             currY = (int) projectile.getY();
             projectile.setTime(i);

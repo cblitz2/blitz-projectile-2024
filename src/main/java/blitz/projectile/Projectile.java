@@ -43,8 +43,4 @@ public class Projectile {
         return (2 * velocity * velocity * Math.sin(radians) * Math.cos(radians)) / GRAVITY;
     }
 
-    public double getSeconds() {
-        return time;
-    }
-
 }
