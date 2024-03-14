@@ -13,6 +13,21 @@ public class Projectile {
         this.radians = Math.toRadians(angle);
     }
 
+    public Projectile(Projectile projectile) {
+        this(projectile.angle, projectile.velocity);
+        this.time = projectile.time;
+
+    }
+
+    public int xAtTime() {
+        setTime(getX());
+        return 0;
+    }
+
+    public void yAtTime() {
+        setTime(getY());
+    }
+
     public void setTime(double time) {
         this.time = time;
     }
