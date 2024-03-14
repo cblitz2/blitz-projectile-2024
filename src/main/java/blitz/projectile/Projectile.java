@@ -19,15 +19,6 @@ public class Projectile {
 
     }
 
-    public int xAtTime() {
-        setTime(getX());
-        return 0;
-    }
-
-    public void yAtTime() {
-        setTime(getY());
-    }
-
     public void setTime(double time) {
         this.time = time;
     }

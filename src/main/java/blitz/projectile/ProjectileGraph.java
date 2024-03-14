@@ -6,7 +6,7 @@ import java.awt.*;
 public class ProjectileGraph extends JComponent {
 
     Projectile projectile = new Projectile(0, 0);
-
+    Projectile projectileCopy = new Projectile(projectile);
 
 
     @Override
@@ -50,7 +50,9 @@ public class ProjectileGraph extends JComponent {
 
         g.setColor(Color.RED);
 
-        g.fillOval(projectile.xAtTime(), getY(), 10, 10);
+        projectileCopy.setTime(getX());
+        projectileCopy.setTime(getY());
+        g.fillOval((int) projectileCopy.getX() + 30, (int) projectileCopy.getY() - 30, 10, 10);
     }
 
     public void setProjectile(Projectile projectile) {
