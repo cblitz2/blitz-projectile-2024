@@ -9,9 +9,11 @@ import java.awt.event.ActionListener;
 
 public class ProjectileFrame extends JFrame
 {
-    private JTextField velocityField;
+    private JSlider velocityField;
     private JTextField secondsField;
     private JSlider angleField;
+    private JLabel velocityValLabel;
+    private JLabel angleValLabel;
     private JLabel labX;
     private JLabel labY;
     private JLabel peakY;
@@ -32,22 +34,33 @@ public class ProjectileFrame extends JFrame
         JPanel west = new JPanel();
         main.add(west, BorderLayout.WEST);
 
-        west.setLayout(new GridLayout(8, 2));
+        west.setLayout(new GridLayout(10, 2));
 
-        angleField = new JSlider(0, 90);
+        angleField = new JSlider(0, 90, 31);
         add(angleField);
         JLabel angleLabel = new JLabel("Angle");
         west.add(angleLabel);
         west.add(angleField);
 
-        velocityField = new JTextField();
+        JLabel AngleValueLabel = new JLabel("Angle Value");
+        west.add(AngleValueLabel);
+        angleValLabel = new JLabel();
+        west.add(angleValLabel);
+
+        velocityField = new JSlider(0, 100, 65);
+        add(velocityField);
         JLabel velocityLabel = new JLabel("Velocity");
         west.add(velocityLabel);
         west.add(velocityField);
 
+        JLabel velocityValueLabel = new JLabel("Velocity Value");
+        west.add(velocityValueLabel);
+        velocityValLabel = new JLabel();
+        west.add(velocityValLabel);
+
         JLabel secondsLabel = new JLabel("Seconds");
         west.add(secondsLabel);
-        secondsField = new JTextField();
+        secondsField = new JTextField("2.7");
         west.add(secondsField);
 
         JLabel labelX = new JLabel("X");
@@ -81,13 +94,8 @@ public class ProjectileFrame extends JFrame
             }
         });
 
-        velocityField.getDocument().addDocumentListener(new SimpleDocumentListener()
-        {
-            @Override
-            public void update(DocumentEvent e) {
-                calculate();
-            }
-        });
+        velocityField.addChangeListener(e ->
+                calculate());
 
         secondsField.getDocument().addDocumentListener(new SimpleDocumentListener()
         {
@@ -107,7 +115,7 @@ public class ProjectileFrame extends JFrame
 
     private void calculate() {
         Projectile projectile = new Projectile(angleField.getValue(),
-                Double.parseDouble(velocityField.getText())
+                (velocityField.getValue())
         );
 
         projectile.setTime(Double.parseDouble(secondsField.getText()));
@@ -116,7 +124,8 @@ public class ProjectileFrame extends JFrame
         peakY.setText(Double.toString(projectile.getPeakY()));
         interceptX.setText(Double.toString(projectile.getInterceptX()));
         graph.setProjectile(projectile);
-
+        velocityValLabel.setText(String.valueOf(velocityField.getValue()));
+        angleValLabel.setText(String.valueOf(angleField.getValue()));
     }
 
     public interface SimpleDocumentListener extends DocumentListener {

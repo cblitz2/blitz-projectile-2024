@@ -6,4 +6,5 @@ public class Main {
         ProjectileFrame frame = new ProjectileFrame();
         frame.setVisible(true);
     }
+
 }
